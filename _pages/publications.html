@@ -1,36 +1,41 @@
 ---
-layout: archive
-title: "Publications"
+layout:  archive
+title: "Selected Publications"
 permalink: /publications/
 author_profile: true
 ---
 
-{% if site.author.googlescholar %}
-  <div class="wordwrap">You can also find my articles on <a href="{{site.author.googlescholar}}">my Google Scholar profile</a>.</div>
-{% endif %}
-
-{% include base_path %}
-
-<!-- New style rendering if publication categories are defined -->
-{% if site.publication_category %}
-  {% for category in site.publication_category  %}
-    {% assign title_shown = false %}
-    {% for post in site.publications reversed %}
-      {% if post.category != category[0] %}
-        {% continue %}
-      {% endif %}
-      {% unless title_shown %}
-        <h2>{{ category[1].title }}</h2><hr />
-        {% assign title_shown = true %}
-      {% endunless %}
-      {% include archive-single.html %}
-    {% endfor %}
-  {% endfor %}
-{% else %}
-  {% for post in site.publications reversed %}
-    {% include archive-single.html %}
-  {% endfor %}
-{% endif %}
+For a complete list, <a href="https://ui.adsabs.harvard.edu/search/q=%20author%3A%22Lanman%2C%20Adam%20E%22&sort=date%20desc%2C%20bibcode%20desc&p_=0">see the ADS</a>
 
 
+<figure style="float:right; padding:10px; display:inline; width:50%">
+    <img src='/images/gbo_adamdong.jpg' alt='The GBO outrigger in winter (Photo by Adam Dong)' />
+    <figcaption> The Green Bank Observatory (GBO) CHIME/FRB Outrigger (photo by Adam Dong)</figcaption>
+</figure>
+
+<h2>Lead-author</h2>
+<ul class="list-none m-0 p-0">
+{% assign pubs = site.publications | where_exp: "p", "p.tags contains 'lead-author'" | sort: "date" | reverse %}
+{% for pub in pubs %}
+  <li class="py-2">
+    <a href="{{ pub.url | relative_url }}">{{ pub.title }}</a>
+    {% if pub.venue %}<span class="page__meta"> · {{ pub.venue }}</span>{% endif %}
+    {% if pub.category %}<span class="page__meta"> · {{ pub.category }}</span>{% endif %}
+    {% if pub.date %}<span class="page__meta"> · {{ pub.date | date: "%Y" }}</span>{% endif %}
+  </li>
+{% endfor %}
+</ul>
+
+<h2>Co-author</h2>
+<ul class="list-none m-0 p-0">
+{% assign pubs = site.publications | where_exp: "p", "p.tags contains 'co-author'" | sort: "date" | reverse %}
+{% for pub in pubs %}
+  <li class="py-2">
+    <a href="{{ pub.url | relative_url }}">{{ pub.title }}</a>
+    {% if pub.venue %}<span class="page__meta"> · {{ pub.venue }}</span>{% endif %}
+    {% if pub.category %}<span class="page__meta"> · {{ pub.category }}</span>{% endif %}
+    {% if pub.date %}<span class="page__meta"> · {{ pub.date | date: "%Y" }}</span>{% endif %}
+  </li>
+{% endfor %}
+</ul>
 

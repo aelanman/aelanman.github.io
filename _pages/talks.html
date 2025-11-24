@@ -1,8 +1,9 @@
 ---
 layout: archive
-title: "Talks and presentations"
+title: "Presentations"
 permalink: /talks/
 author_profile: true
+show_excerpts: false
 ---
 
 {% if site.talkmap_link == true %}
@@ -10,7 +11,29 @@ author_profile: true
 <p style="text-decoration:underline;"><a href="/talkmap.html">See a map of all the places I've given a talk!</a></p>
 
 {% endif %}
-
+<figure style="float:right; padding:4px; display:inline; width:50%">
+    <img src='/images/ursi_pranav_crop.jpg' alt='Photo from URSI NRSM 2024' />
+    <figcaption> Presenting at the URSI NRSM, Jan 2024</figcaption>
+</figure>
 {% for post in site.talks reversed %}
   {% include archive-single-talk.html %}
 {% endfor %}
+
+<!--
+<ul class="list-none m-0 p-0">
+{% assign items = site.talks | sort: 'date' | reverse %}
+{% for talk in items %}
+  <li class="py-2">
+    <a href="{{ talk.url | relative_url }}">{{ talk.title }}</a>
+    {% if talk.type %}
+      <span class="page__meta">· {{ talk.type }}</span>
+    {% endif %}
+    {% if talk.tags %}
+      {% for tag in talk.tags %}
+        <span class="page__meta">· {{ tag }}</span>
+      {% endfor %}
+    {% endif %}
+  </li>
+{% endfor %}
+</ul>
+-->
