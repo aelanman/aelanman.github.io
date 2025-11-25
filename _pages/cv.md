@@ -9,6 +9,9 @@ redirect_from:
 
 {% include base_path %}
 
+[Download as a PDF here](/files/alanman_cv.pdf)
+
+
 ## Education
 
 - 2019  Ph.D.  Brown University, Physics
@@ -19,8 +22,8 @@ redirect_from:
 
 ## Research Positions
 
-- Sept 2023 -- Present: Postdoctoral AssociateMIT Kavli Institute
-- Aug 2020 -- Sept 2023: Postdoctoral ResearcherTrottier Space Institute at McGill
+- Sept 2023 -- Present: Postdoctoral Associate  MIT Kavli Institute
+- Aug 2020 -- Sept 2023: Postdoctoral Researcher  Trottier Space Institute at McGill
 
 ## Awards & Recognitions
 
