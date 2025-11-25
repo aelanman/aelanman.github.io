@@ -14,12 +14,9 @@ main:
   - title: "Talks"
     url: /talks/    
 
-  - title: "Teaching & Outreach"
+  - title: "Outreach"
     url: /teaching/
-    
-      #  - title: "Portfolio"
-      #    url: /portfolio/
-        
+
   - title: "Blog"
     url: /year-archive/
     
